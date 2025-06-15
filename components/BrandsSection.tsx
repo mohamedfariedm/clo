@@ -1,6 +1,10 @@
 'use client';
 
 import { getTranslations } from '@/lib/i18n';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 interface BrandsSectionProps {
   locale: string;
@@ -11,51 +15,55 @@ export default function BrandsSection({ locale }: BrandsSectionProps) {
   const isRTL = locale === 'ar';
 
   const brands = [
-    { name: 'Polo', image: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&dpr=2' },
-    { name: 'Rolex', image: 'https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&dpr=2' },
-    { name: 'Lacoste', image: 'https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&dpr=2' },
-    { name: 'Adidas', image: 'https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&dpr=2' },
-    { name: 'Nike', image: 'https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&dpr=2' },
-    { name: 'H&M', image: 'https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&dpr=2' },
-    { name: 'Gucci', image: 'https://images.pexels.com/photos/2783873/pexels-photo-2783873.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&dpr=2' },
-    { name: 'Zara', image: 'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&dpr=2' },
+    { name: 'Polo', image: 'https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-06-15/oo1TwzAQTj.png' },
+    { name: 'Rolex', image: 'https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-06-15/2hDw3F8hGJ.png' },
+    { name: 'Lacoste', image: 'https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-06-15/WFeVQ3d5T5.png' },
+    { name: 'Adidas', image: 'https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-06-15/H4qGqnLJgr.png' },
+    { name: 'Nike', image: 'https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-06-15/CrStS8TQ8f.png' },
+    { name: 'H&M', image: 'https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-06-15/DS9fpTZShU.png' },
+    { name: 'Gucci', image: 'https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-06-15/W92hMJp6tC.png' },
+    { name: 'Zara', image: 'https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-06-15/unNmiyjfsd.png' },
   ];
 
   return (
-    <section id="brands" className="py-20 bg-gray-50" dir={isRTL ? 'rtl' : 'ltr'}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+    <section id="brands" dir={isRTL ? 'rtl' : 'ltr'} className="w-full pt-24 pb-24 px-4  bg-white">
+      <div className="max-w-[1440px] mx-auto flex flex-col items-center gap-[72px]">
+        {/* Section Header */}
+        <div className="w-full max-w-[1200px] flex flex-col gap-[4px] items-center text-center">
+          <h2 className="w-full max-w-[536px] text-[40px] font-semibold leading-[60px] text-[#1a1a1a] font-poppins">
             {t.brandsTitle}
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+          <p className="w-full max-w-[950px] text-[20px] font-normal leading-[30px] text-[#8a8a8a] font-poppins">
             {t.brandsSubtitle}
           </p>
         </div>
 
-        {/* Brands Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
-          {brands.map((brand, index) => (
-            <div 
-              key={brand.name}
-              className="group cursor-pointer"
-            >
-              <div className="relative overflow-hidden rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <img
-                  src={brand.image}
-                  alt={brand.name}
-                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl font-semibold text-white">
+        {/* Swiper Brands */}
+        <div className="w-full">
+          <Swiper
+            spaceBetween={24}
+            slidesPerView={1.3}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 4.8 },
+            }}
+            dir={isRTL ? 'rtl' : 'ltr'}
+          >
+            {brands.map((brand) => (
+              <SwiperSlide key={brand.name}>
+                <div className="flex flex-col gap-[8px] justify-center items-center  max-w-full mx-auto">
+                  <div
+                    className="h-[344px] w-full rounded-[24px] hover:rounded-full bg-cover bg-no-repeat"
+                    style={{ backgroundImage: `url(${brand.image})` }}
+                  />
+                  <span className="h-[36px] text-[24px] font-semibold leading-[36px] text-[#1a1a1a] font-poppins">
                     {brand.name}
-                  </h3>
+                  </span>
                 </div>
-              </div>
-            </div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
