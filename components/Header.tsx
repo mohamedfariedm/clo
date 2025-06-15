@@ -54,7 +54,7 @@ export default function Header({ locale }: HeaderProps) {
           <div className="flex items-center space-x-4">
             <LanguageSwitcher currentLocale={locale} />
             <Button 
-              className="hidden md:inline-flex bg-gray-800 hover:bg-gray-700 text-white px-6 py-2 rounded-full"
+              className="hidden md:inline-flex bg-[#2a2a2a] hover:bg-[#434343] text-white px-6 py-2 rounded-full"
             >
               {t.downloadApp}
             </Button>
@@ -85,7 +85,7 @@ export default function Header({ locale }: HeaderProps) {
                   {item.name}
                 </a>
               ))}
-              <Button className="bg-gray-800 hover:bg-gray-700 text-white mt-4">
+              <Button className="bg-[#2a2a2a] hover:bg-[#434343] text-white mt-4">
                 {t.downloadApp}
               </Button>
             </nav>

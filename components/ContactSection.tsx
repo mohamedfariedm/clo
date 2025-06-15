@@ -35,7 +35,7 @@ export default function ContactSection({ locale }: ContactSectionProps) {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-900" dir={isRTL ? 'rtl' : 'ltr'}>
+    <section id="contact" className="py-20 bg-[#1A1A1A]" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -66,13 +66,13 @@ export default function ContactSection({ locale }: ContactSectionProps) {
                   placeholder={t.firstName}
                   value={formData.firstName}
                   onChange={(e) => handleChange('firstName', e.target.value)}
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                  className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 py-[12px] px-[16px] h-[56px]"
                 />
                 <Input
                   placeholder={t.lastName}
                   value={formData.lastName}
                   onChange={(e) => handleChange('lastName', e.target.value)}
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                  className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 py-[12px] px-[16px] h-[56px]"
                 />
               </div>
 
@@ -81,7 +81,7 @@ export default function ContactSection({ locale }: ContactSectionProps) {
                 placeholder={t.phoneNumber}
                 value={formData.phone}
                 onChange={(e) => handleChange('phone', e.target.value)}
-                className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 py-[12px] px-[16px] h-[56px]"
               />
 
               {/* Email */}
@@ -90,12 +90,12 @@ export default function ContactSection({ locale }: ContactSectionProps) {
                 placeholder={t.email}
                 value={formData.email}
                 onChange={(e) => handleChange('email', e.target.value)}
-                className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 py-[12px] px-[16px] h-[56px]"
               />
 
               {/* Subject */}
               <Select onValueChange={(value) => handleChange('subject', value)}>
-                <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
+                <SelectTrigger className="bg-[#2a2a2a] border-gray-700 text-white h-[56px]">
                   <SelectValue placeholder="Select a subject" />
                 </SelectTrigger>
                 <SelectContent>
@@ -111,9 +111,8 @@ export default function ContactSection({ locale }: ContactSectionProps) {
                 value={formData.message}
                 onChange={(e) => handleChange('message', e.target.value)}
                 rows={6}
-                className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 py-[12px] px-[16px]"
               />
-
               {/* Submit Button */}
               <Button 
                 type="submit" 
@@ -129,7 +128,7 @@ export default function ContactSection({ locale }: ContactSectionProps) {
             <img
               src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=2"
               alt="Contact Us"
-              className="w-full max-w-md h-96 object-cover rounded-2xl shadow-lg"
+              className="w-full  h-full object-cover rounded-2xl shadow-lg"
             />
           </div>
         </div>

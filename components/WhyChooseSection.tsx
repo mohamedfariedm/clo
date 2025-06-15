@@ -30,7 +30,7 @@ export default function WhyChooseSection({ locale }: WhyChooseSectionProps) {
   ];
 
   return (
-    <section id="features" className="py-20 bg-gray-900" dir={isRTL ? 'rtl' : 'ltr'}>
+    <section id="features" className="py-20 bg-[#1A1A1A]" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -49,9 +49,9 @@ export default function WhyChooseSection({ locale }: WhyChooseSectionProps) {
             return (
               <div 
                 key={index}
-                className="bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition-colors duration-300"
+                className="bg-[#2a2a2a] rounded-2xl p-8 hover:bg-[#434343] transition-colors duration-300"
               >
-                <div className="bg-gray-700 rounded-full p-4 w-fit mb-8">
+                <div className="bg-[#434343] rounded-full p-4 w-fit mb-8">
                   <IconComponent className="w-12 h-12 text-white" />
                 </div>
                 <h3 className="text-2xl font-semibold text-white mb-4">

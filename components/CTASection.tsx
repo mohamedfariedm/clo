@@ -14,7 +14,7 @@ export default function CTASection({ locale }: CTASectionProps) {
   return (
     <section className="py-20 bg-white relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="bg-gray-800 rounded-3xl p-8 md:p-16 relative overflow-hidden">
+        <div className="bg-[#2a2a2a] rounded-3xl p-8 md:p-16 relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-900 opacity-90"></div>
           
@@ -38,14 +38,14 @@ export default function CTASection({ locale }: CTASectionProps) {
             
             {/* App Store Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-black hover:bg-gray-900 text-white">
+              <Button className="bg-black hover:bg-[#1A1A1A] text-white">
                 <img 
                   src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
                   alt="Download on App Store" 
                   className="h-12"
                 />
               </Button>
-              <Button className="bg-black hover:bg-gray-900 text-white">
+              <Button className="bg-black hover:bg-[#1A1A1A] text-white">
                 <img 
                   src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
                   alt="Get it on Google Play" 
