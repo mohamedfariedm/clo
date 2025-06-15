@@ -34,10 +34,14 @@ export default function CTASection({ locale }: CTASectionProps) {
     </div>
 
     {/* App buttons */}
-    <div className="flex gap-4 items-center">
-      <div className="w-[120px] lg:w-[129.306px] h-[40px] lg:h-[47.059px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-06-15/TrQgqORG8V.png')] bg-cover bg-no-repeat" />
-      <div className="w-[120px] lg:w-[126.259px] h-[40px] lg:h-[47.059px] bg-[url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-06-15/qGMUaw9u3c.png')] bg-cover bg-no-repeat" />
-    </div>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <Button className=" bg-[url(/assets/appStoreBlackBorder.svg)] w-[129.31px] h-[47.059px] bg-contain object-fit-contain bg-no-repeat ">
+
+        </Button>
+        <Button className="bg-[url(/assets/googlePlayBlackBorder.svg)] w-[126.26px] h-[47.059px] bg-contain object-fit-contain bg-no-repeat ">
+
+        </Button>
+      </div>
   </div>
 </div>
     </section>

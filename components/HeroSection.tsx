@@ -44,19 +44,11 @@ export default function HeroSection({ locale }: HeroSectionProps) {
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
-        <Button className="w-full sm:w-auto">
-          <img
-            src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-            alt="Download on App Store"
-            className="h-12"
-          />
+        <Button className=" bg-[url(/assets/appStoreBlackBorder.svg)] w-[129.31px] h-[47.059px] bg-contain object-fit-contain bg-no-repeat ">
+
         </Button>
-        <Button className="w-full sm:w-auto">
-          <img
-            src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-            alt="Get it on Google Play"
-            className="h-12"
-          />
+        <Button className="bg-[url(/assets/googlePlayBlackBorder.svg)] w-[126.26px] h-[47.059px] bg-contain object-fit-contain bg-no-repeat ">
+
         </Button>
       </div>
     </div>
