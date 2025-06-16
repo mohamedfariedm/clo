@@ -36,7 +36,7 @@ export default function Footer({ locale }: FooterProps) {
           {/* Logo */}
           <div className="flex items-center">
             <Link href={`/${locale}`}>
-              <span className="text-4xl font-bold text-white">CLO</span>
+              <span className="text-4xl font-semibold text-white">CLO</span>
             </Link>
           </div>
 

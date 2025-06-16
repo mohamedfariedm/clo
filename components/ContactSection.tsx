@@ -55,7 +55,7 @@ export default function ContactSection({ locale }: ContactSectionProps) {
           transition={{ duration: 0.8 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-semibold text-white mb-4">
             {t.contactTitle}
           </h2>
           <p className="text-xl text-gray-300">{t.contactSubtitle}</p>

@@ -39,7 +39,7 @@ export default function WhyChooseSection({ locale }: WhyChooseSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-semibold text-white mb-4">
             {t.whyChooseTitle}
           </h2>
           <p className="text-xl text-gray-300">{t.whyChooseSubtitle}</p>

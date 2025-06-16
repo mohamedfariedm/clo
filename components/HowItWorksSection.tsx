@@ -41,7 +41,7 @@ export default function HowItWorksSection({ locale }: HowItWorksSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-semibold text-gray-900 mb-4">
             {t.howItWorksTitle}
           </h2>
           <p className="text-xl text-[#8A8A8A]">{t.howItWorksSubtitle}</p>
@@ -72,11 +72,11 @@ export default function HowItWorksSection({ locale }: HowItWorksSectionProps) {
               >
                 {/* Content */}
                 <div className="flex-1 space-y-6">
-                  <div className="flex items-center justify-center w-16 h-16 bg-black text-white rounded-full text-2xl font-bold">
+                  <div className="flex items-center justify-center w-16 h-16 bg-black text-white rounded-full text-2xl font-semibold">
                     {step.number}
                   </div>
                   <div>
-                    <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                    <h3 className="text-3xl font-semibold text-gray-900 mb-4">
                       {step.title}
                     </h3>
                     <p className="text-lg text-[#8A8A8A] leading-relaxed">
