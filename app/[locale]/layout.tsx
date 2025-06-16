@@ -1,9 +1,14 @@
 import '../globals.css';
 import type { Metadata } from 'next';
-import { Inter, Poppins } from 'next/font/google';
 import { notFound } from 'next/navigation';
+import { Cairo, Poppins } from 'next/font/google';
+const cairo = Cairo({
+  subsets: ['arabic'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-cairo',
+  display: 'swap',
+});
 
-const inter = Inter({ subsets: ['latin'] });
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800'],
@@ -53,8 +58,11 @@ export default function LocaleLayout({
       lang={params.locale}
       dir={params.locale === 'ar' ? 'rtl' : 'ltr'}
     >
-      <body className={`font-poppins overflow-x-hidden`}>
-        {children}
+<body
+  className={`overflow-x-hidden ${
+    params.locale === 'ar' ? cairo.className : poppins.className
+  }`}
+>        {children}
       </body>
     </html>
   );

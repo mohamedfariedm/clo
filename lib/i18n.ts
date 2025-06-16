@@ -178,7 +178,7 @@ export const translations = {
     },
 
     // Why Choose
-    whyChooseTitle: 'لماذا تختار كلو؟',
+    whyChooseTitle: 'لماذا تختار CLO؟',
     whyChooseSubtitle: 'أفضل العلامات التجارية. توصيل سريع. تسوق آمن وسهل.',
     feature1Title: 'تسوق أفضل العلامات التجارية في مكان واحد',
     feature1Description: 'اكتشف منتجات الموضة والجمال ونمط الحياة من أسماء محلية وعالمية موثوقة في تطبيق واحد.',

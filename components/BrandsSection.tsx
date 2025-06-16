@@ -54,10 +54,10 @@ export default function BrandsSection({ locale }: BrandsSectionProps) {
       <div className="max-w-[1440px] mx-auto flex flex-col items-center gap-[72px] ">
         {/* Section Header */}
         <div className="w-full max-w-[1200px] flex flex-col gap-[4px] items-center text-center">
-          <h2 className="w-full max-w-[536px] text-[40px] font-semibold leading-[60px] text-[#1a1a1a] font-poppins">
+          <h2 className="w-full max-w-[536px] text-[40px] font-semibold leading-[60px] text-[#1a1a1a] ">
             {t.brandsTitle}
           </h2>
-          <p className="w-full max-w-[950px] text-[20px] font-normal leading-[30px] text-[#8A8A8A] font-poppins">
+          <p className="w-full max-w-[950px] text-[20px] font-normal leading-[30px] text-[#8A8A8A] ">
             {t.brandsSubtitle}
           </p>
         </div>
@@ -88,7 +88,7 @@ export default function BrandsSection({ locale }: BrandsSectionProps) {
                     className="h-[344px] w-full rounded-[24px] lg:hover:rounded-full bg-cover bg-no-repeat"
                     style={{ backgroundImage: `url(${brand.image})` }}
                   />
-                  <span className="h-[36px] text-[24px] font-semibold leading-[36px] text-[#1a1a1a] font-poppins">
+                  <span className="h-[36px] text-[24px] font-semibold leading-[36px] text-[#1a1a1a] ">
                     {
                       //@ts-ignore
                       t.brandNames?.[brand.key] ?? brand.key

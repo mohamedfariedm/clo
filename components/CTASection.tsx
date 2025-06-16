@@ -40,10 +40,10 @@ export default function CTASection({ locale }: CTASectionProps) {
         >
           {/* Texts */}
           <div className="flex flex-col gap-1 justify-center items-center lg:items-start w-full">
-            <span className="block w-full text-center lg:text-start text-[28px] lg:text-[40px] font-semibold leading-tight text-white font-poppins">
+            <span className="block w-full text-center lg:text-start text-[28px] lg:text-[40px] font-semibold leading-tight text-white ">
               {t.ctaTitle}
             </span>
-            <span className="block text-[16px] lg:text-[20px] text-center lg:text-start leading-[26px] lg:leading-[30px] text-[#dcdcdc] font-poppins">
+            <span className="block text-[16px] lg:text-[20px] text-center lg:text-start leading-[26px] lg:leading-[30px] text-[#dcdcdc] ">
               {t.ctaSubtitle}
             </span>
           </div>
