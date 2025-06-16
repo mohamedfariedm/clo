@@ -41,7 +41,7 @@ export default function Footer({ locale }: FooterProps) {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center ltr:space-x-4 rtl:gap-4 ">
             {socialLinks.map((social, index) => {
               const IconComponent = social.icon;
               return (
