@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         cairo: ['var(--font-cairo)'],
+        tajawal: ['var(--font-tajawal)'],
         poppins: ['var(--font-poppins)'],
       },
       backgroundImage: {

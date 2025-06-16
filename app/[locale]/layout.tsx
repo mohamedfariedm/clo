@@ -1,11 +1,19 @@
 import '../globals.css';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Cairo, Poppins } from 'next/font/google';
+import { Cairo, Poppins, Tajawal } from 'next/font/google';
+
 const cairo = Cairo({
   subsets: ['arabic'],
   weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-cairo',
+  display: 'swap',
+});
+
+const tajawal = Tajawal({
+  subsets: ['arabic'],
+  weight: ['300', '400', '500', '700', '800'],
+  variable: '--font-tajawal',
   display: 'swap',
 });
 
@@ -60,7 +68,7 @@ export default function LocaleLayout({
     >
 <body
   className={`overflow-x-hidden ${
-    params.locale === 'ar' ? cairo.className : poppins.className
+    params.locale === 'ar' ? tajawal.className : poppins.className
   }`}
 >        {children}
       </body>
