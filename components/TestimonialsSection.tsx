@@ -1,7 +1,6 @@
 'use client';
 
 import { getTranslations } from '@/lib/i18n';
-import { Star } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -18,106 +17,20 @@ export default function TestimonialsSection({ locale }: TestimonialsSectionProps
   const t = getTranslations(locale as 'en' | 'ar');
   const isRTL = locale === 'ar';
 
-  const testimonials = [
-    {
-      name: 'Omar Adel',
-      role: 'Small Business Owner',
-      image:
-        'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
-      text: 'I love the flexible payment options. It makes shopping way more convenient!',
-      rating: 5,
-    },
-    {
-      name: 'Omar Adel',
-      role: 'Small Business Owner',
-      image:
-        'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
-      text: 'I love the flexible payment options. It makes shopping way more convenient!',
-      rating: 5,
-    },
-    {
-      name: 'Sara Mahmoud',
-      role: 'Fashion Enthusiast',
-      image:
-        'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
-      text: 'Clo completely changed how I shop. Everything is fast, easy, and the brands are amazing!',
-      rating: 5,
-    },
-    {
-      name: 'Sara Mahmoud',
-      role: 'Fashion Enthusiast',
-      image:
-        'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
-      text: 'Clo completely changed how I shop. Everything is fast, easy, and the brands are amazing!',
-      rating: 5,
-    },
-    {
-      name: 'Lina Rami',
-      role: 'Stylist & Content Creator',
-      image:
-        'https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
-      text: "The app is super smooth, and I always find what I'm looking for. Highly recommended.",
-      rating: 5,
-    },
-    {
-      name: 'Lina Rami',
-      role: 'Stylist & Content Creator',
-      image:
-        'https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
-      text: "The app is super smooth, and I always find what I'm looking for. Highly recommended.",
-      rating: 5,
-    },
-    {
-      name: 'Amina Khaled',
-      role: 'Digital Marketer',
-      image:
-        'https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
-      text: 'Clo makes shopping so smooth. I love how easy it is to browse and buy.',
-      rating: 5,
-    },
-    {
-      name: 'Amina Khaled',
-      role: 'Digital Marketer',
-      image:
-        'https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
-      text: 'Clo makes shopping so smooth. I love how easy it is to browse and buy.',
-      rating: 5,
-    },
-    {
-      name: 'Mohamed Zaki',
-      role: 'Photographer',
-      image:
-        'https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
-      text: 'Everything I needed was right there. Great brands, great prices.',
-      rating: 5,
-    },
-    {
-      name: 'Mohamed Zaki',
-      role: 'Photographer',
-      image:
-        'https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
-      text: 'Everything I needed was right there. Great brands, great prices.',
-      rating: 5,
-    },
-    {
-      name: 'Sara Nader',
-      role: 'Fashion Blogger',
-      image:
-        'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
-      text: "Honestly, I didn't expect it to be this good. The app feels premium.",
-      rating: 5,
-    },
-    {
-      name: 'Sara Nader',
-      role: 'Fashion Blogger',
-      image:
-        'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
-      text: "Honestly, I didn't expect it to be this good. The app feels premium.",
-      rating: 5,
-    },
-  ];
+  const images = [
+  'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
+  'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
+  'https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
+  'https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
+  'https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
+  'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2',
+];
+  const testimonials = t.testimonialsList.map((testimonial: any, index: number) => ({
+    ...testimonial,
+    image: images[index % images.length],
+    rating: 5,
+  }));
 
-  // Split testimonials into 3 roughly equal parts
   const columns = [[], [], []] as typeof testimonials[][];
   //@ts-ignore
   testimonials.forEach((t, i) => columns[i % 3].push(t));
@@ -128,13 +41,13 @@ export default function TestimonialsSection({ locale }: TestimonialsSectionProps
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">{t.testimonialsTitle}</h2>
-          <p className="text-xl text-gray-600">{t.testimonialsSubtitle}</p>
+          <p className="text-xl text-[#8A8A8A]">{t.testimonialsSubtitle}</p>
         </div>
 
-        {/* Swiper Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* 🖥 Desktop - 3 Vertical Sliders */}
+        <div className="hidden md:grid grid-cols-3 gap-6">
           {columns.map((column, colIndex) => (
-            <Swiper
+               <Swiper
     key={colIndex}
     direction="vertical"
     slidesPerView={3}
@@ -182,6 +95,39 @@ export default function TestimonialsSection({ locale }: TestimonialsSectionProps
               ))}
             </Swiper>
           ))}
+        </div>
+
+        {/* 📱 Mobile - Single Horizontal Swiper */}
+        <div className="md:hidden">
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={20}
+            loop={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay]}
+          >
+            {testimonials.map((testimonial, i) => (
+              <SwiperSlide key={i}>
+                <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="flex items-center mb-4">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover mr-4"
+                    />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                      <p className="text-sm text-gray-600">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">"{testimonial.text}"</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

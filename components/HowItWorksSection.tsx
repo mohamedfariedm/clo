@@ -17,21 +17,21 @@ export default function HowItWorksSection({ locale }: HowItWorksSectionProps) {
       title: t.step1Title,
       description: t.step1Description,
       icon: Search,
-      image: 'https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=2'
+      image: '/assets/howItWorks1.svg'
     },
     {
       number: '02',
       title: t.step2Title,
       description: t.step2Description,
       icon: ShoppingBag,
-      image: 'https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=2'
+      image: '/assets/howItWorks2.svg'
     },
     {
       number: '03',
       title: t.step3Title,
       description: t.step3Description,
       icon: CreditCard,
-      image: 'https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=2'
+      image: '/assets/howItWorks3.svg'
     }
   ];
 
@@ -43,7 +43,7 @@ export default function HowItWorksSection({ locale }: HowItWorksSectionProps) {
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             {t.howItWorksTitle}
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-[#8A8A8A]">
             {t.howItWorksSubtitle}
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function HowItWorksSection({ locale }: HowItWorksSectionProps) {
                 key={step.number}
                 className={`flex flex-col lg:flex-row items-center gap-12 ${
                   isEven && !isRTL ? 'lg:flex-row-reverse' : ''
-                } ${isEven && isRTL ? 'lg:flex-row' : ''}`}
+                } ${isEven && isRTL ? 'lg:flex-row-reverse' : ''}`}
               >
                 {/* Content */}
                 <div className="flex-1 space-y-6">
@@ -70,7 +70,7 @@ export default function HowItWorksSection({ locale }: HowItWorksSectionProps) {
                     <h3 className="text-3xl font-bold text-gray-900 mb-4">
                       {step.title}
                     </h3>
-                    <p className="text-lg text-gray-600 leading-relaxed">
+                    <p className="text-lg text-[#8A8A8A] leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -82,12 +82,8 @@ export default function HowItWorksSection({ locale }: HowItWorksSectionProps) {
                     <img
                       src={step.image}
                       alt={step.title}
-                      className="w-full h-96 object-cover rounded-2xl shadow-lg"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
-                    <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-full p-4">
-                      <IconComponent className="w-8 h-8 text-black" />
-                    </div>
+                      className="w-full h-[400px] object-contain"
+                    />                  
                   </div>
                 </div>
               </div>

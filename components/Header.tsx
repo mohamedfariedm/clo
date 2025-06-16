@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getTranslations } from '@/lib/i18n';
@@ -15,6 +15,7 @@ interface HeaderProps {
 export default function Header({ locale }: HeaderProps) {
   const t = getTranslations(locale as 'en' | 'ar');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const isRTL = locale === 'ar';
 
   const navigation = [
@@ -26,19 +27,33 @@ export default function Header({ locale }: HeaderProps) {
     { name: t.contact, href: '#contact' },
   ];
 
+  // Listen to scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm ">
+    <header
+      className={`fixed top-0 left-0 right-0 z-[1000] backdrop-blur-sm transition-colors duration-300 ${
+        scrolled ? 'bg-[#1a1a1a54]' : ''
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-8">
+        <div className="flex justify-between items-center py-3 lg:py-8">
           {/* Logo */}
           <div className="flex items-center">
             <Link href={`/${locale}`}>
-              <span className="text-3xl font-bold text-white">CLO</span>
+              <span className="text-5xl font-semibold text-white">CLO</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center gap-8">
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -53,12 +68,10 @@ export default function Header({ locale }: HeaderProps) {
           {/* Right side */}
           <div className="flex items-center space-x-4">
             <LanguageSwitcher currentLocale={locale} />
-            <Button 
-              className="hidden md:inline-flex bg-[#2a2a2a] hover:bg-[#434343] text-white px-6 py-2 rounded-full"
-            >
+            <Button className="hidden md:inline-flex bg-[#2a2a2a] hover:bg-[#434343] text-white px-6 py-2 rounded-full h-[56px] w-[148px]">
               {t.downloadApp}
             </Button>
-            
+
             {/* Mobile menu button */}
             <Button
               variant="ghost"

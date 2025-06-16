@@ -49,7 +49,7 @@ export default function WhyChooseSection({ locale }: WhyChooseSectionProps) {
             return (
               <div 
                 key={index}
-                className="bg-[#2a2a2a] rounded-2xl p-8 hover:bg-[#434343] transition-colors duration-300"
+                className="bg-[url('/assets/featureCard.svg')] rounded-3xl p-8 hover:bg-[url('/assets/featureCardHover.svg')] bg-cover bg-center bg-no-repeat transition-all duration-300 ease-in-out"
               >
                 <div className="bg-[#434343] rounded-full p-4 w-fit mb-8">
                   <IconComponent className="w-12 h-12 text-white" />

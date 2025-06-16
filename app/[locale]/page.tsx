@@ -10,6 +10,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
+import BackToTopButton from '@/components/BackToTopButton';
 
 export default function Home({ params }: { params: { locale: string } }) {
   const isRTL = params.locale === 'ar';
@@ -31,6 +32,7 @@ export default function Home({ params }: { params: { locale: string } }) {
         <TestimonialsSection locale={params.locale} />
         <CTASection locale={params.locale} />
         <ContactSection locale={params.locale} />
+        <BackToTopButton />
       </main>
       <Footer locale={params.locale} />
     </div>

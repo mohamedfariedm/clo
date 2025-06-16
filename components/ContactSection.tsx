@@ -126,7 +126,7 @@ export default function ContactSection({ locale }: ContactSectionProps) {
           {/* Contact Image */}
           <div className="flex items-center justify-center">
             <img
-              src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=2"
+              src="/assets/about.svg"
               alt="Contact Us"
               className="w-full  h-full object-cover rounded-2xl shadow-lg"
             />
