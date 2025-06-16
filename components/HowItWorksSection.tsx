@@ -2,6 +2,7 @@
 
 import { getTranslations } from '@/lib/i18n';
 import { Search, ShoppingBag, CreditCard } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface HowItWorksSectionProps {
   locale: string;
@@ -17,22 +18,22 @@ export default function HowItWorksSection({ locale }: HowItWorksSectionProps) {
       title: t.step1Title,
       description: t.step1Description,
       icon: Search,
-      image: '/assets/howItWorks1.svg'
+      image: '/assets/howItWorks1.svg',
     },
     {
       number: '02',
       title: t.step2Title,
       description: t.step2Description,
       icon: ShoppingBag,
-      image: '/assets/howItWorks2.svg'
+      image: '/assets/howItWorks2.svg',
     },
     {
       number: '03',
       title: t.step3Title,
       description: t.step3Description,
       icon: CreditCard,
-      image: '/assets/howItWorks3.svg'
-    }
+      image: '/assets/howItWorks3.svg',
+    },
   ];
 
   return (
@@ -43,20 +44,28 @@ export default function HowItWorksSection({ locale }: HowItWorksSectionProps) {
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             {t.howItWorksTitle}
           </h2>
-          <p className="text-xl text-[#8A8A8A]">
-            {t.howItWorksSubtitle}
-          </p>
+          <p className="text-xl text-[#8A8A8A]">{t.howItWorksSubtitle}</p>
         </div>
 
         {/* Steps */}
         <div className="space-y-20">
           {steps.map((step, index) => {
-            const IconComponent = step.icon;
             const isEven = index % 2 === 1;
-            
+            const fromX = isRTL
+              ? isEven
+                ? -100
+                : 100
+              : isEven
+              ? 100
+              : -100;
+
             return (
-              <div 
+              <motion.div
                 key={step.number}
+                initial={{ opacity: 0, x: fromX }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                viewport={{ once: false, amount: 0.5 }}
                 className={`flex flex-col lg:flex-row items-center gap-12 ${
                   isEven && !isRTL ? 'lg:flex-row-reverse' : ''
                 } ${isEven && isRTL ? 'lg:flex-row-reverse' : ''}`}
@@ -83,10 +92,10 @@ export default function HowItWorksSection({ locale }: HowItWorksSectionProps) {
                       src={step.image}
                       alt={step.title}
                       className="w-full h-[400px] object-contain"
-                    />                  
+                    />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

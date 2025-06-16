@@ -2,6 +2,7 @@
 
 import { getTranslations } from '@/lib/i18n';
 import { Store, Truck, Shield } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface WhyChooseSectionProps {
   locale: string;
@@ -30,25 +31,36 @@ export default function WhyChooseSection({ locale }: WhyChooseSectionProps) {
   ];
 
   return (
-    <section id="features" className="py-20 bg-[#1A1A1A]" dir={isRTL ? 'rtl' : 'ltr'}>
+    <section
+      id="features"
+      className="py-20 bg-[#1A1A1A]"
+      dir={isRTL ? 'rtl' : 'ltr'}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
             {t.whyChooseTitle}
           </h2>
-          <p className="text-xl text-gray-300">
-            {t.whyChooseSubtitle}
-          </p>
+          <p className="text-xl text-gray-300">{t.whyChooseSubtitle}</p>
         </div>
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
+
             return (
-              <div 
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.8,
+                  delay: index * 0.2,
+                  ease: 'easeOut',
+                }}
+                viewport={{ once: false, amount: 0.4 }}
                 className="bg-[url('/assets/featureCard.svg')] rounded-3xl p-8 hover:bg-[url('/assets/featureCardHover.svg')] bg-cover bg-center bg-no-repeat transition-all duration-300 ease-in-out"
               >
                 <div className="bg-[#434343] rounded-full p-4 w-fit mb-8">
@@ -60,7 +72,7 @@ export default function WhyChooseSection({ locale }: WhyChooseSectionProps) {
                 <p className="text-gray-300 leading-relaxed">
                   {feature.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>

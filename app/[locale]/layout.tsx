@@ -53,7 +53,7 @@ export default function LocaleLayout({
       lang={params.locale}
       dir={params.locale === 'ar' ? 'rtl' : 'ltr'}
     >
-      <body className={`font-poppins`}>
+      <body className={`font-poppins overflow-x-hidden`}>
         {children}
       </body>
     </html>

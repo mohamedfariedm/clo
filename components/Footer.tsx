@@ -48,7 +48,7 @@ export default function Footer({ locale }: FooterProps) {
                 <a
                   key={index}
                   href={social.href}
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-[#DCDCDC] hover:text-gray-400 transition-colors duration-200"
                 >
                   <IconComponent className="w-5 h-5" />
                 </a>
@@ -58,7 +58,7 @@ export default function Footer({ locale }: FooterProps) {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-800 my-8"></div>
+        <div className="border-t border-white my-8"></div>
 
         {/* Bottom Section */}
         <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
@@ -68,7 +68,7 @@ export default function Footer({ locale }: FooterProps) {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                className="text-white hover:text-gray-400 transition-colors duration-200 text-sm"
               >
                 {item.name}
               </a>
@@ -76,7 +76,7 @@ export default function Footer({ locale }: FooterProps) {
           </nav>
 
           {/* Copyright */}
-          <p className="text-gray-400 text-sm">
+          <p className="text-white text-sm">
             {t.footerCopyright}
           </p>
         </div>
