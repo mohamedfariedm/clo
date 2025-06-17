@@ -135,7 +135,15 @@ export const translations = {
     email: 'Email',
     message: 'Message',
     send: 'Send',
-
+validation: {
+  firstNameRequired: 'First name is required',
+  lastNameRequired: 'Last name is required',
+  phoneRequired: 'Phone number is required',
+  phoneInvalid: 'Phone number must start with 05 or +966 and contain 9 digits after',
+  emailInvalid: 'Email is invalid',
+  subjectRequired: 'Subject is required',
+  messageRequired: 'Message is required',
+},
     // Footer
     footerCopyright: '2025 © CLO All rights reserved'
   },
@@ -267,7 +275,15 @@ export const translations = {
     email: 'البريد الإلكتروني',
     message: 'الرسالة',
     send: 'إرسال',
-
+validation: {
+  firstNameRequired: 'الاسم الأول مطلوب',
+  lastNameRequired: 'اسم العائلة مطلوب',
+  phoneRequired: 'رقم الهاتف مطلوب',
+  phoneInvalid: 'يجب أن يبدأ رقم الهاتف بـ 05 أو +966 ويحتوي على 9 أرقام بعده',
+  emailInvalid: 'البريد الإلكتروني غير صالح',
+  subjectRequired: 'الموضوع مطلوب',
+  messageRequired: 'الرسالة مطلوبة',
+},
     // Footer
     footerCopyright: '2025 © CLO جميع الحقوق محفوظة'
   }

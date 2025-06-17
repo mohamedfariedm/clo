@@ -1,6 +1,9 @@
+// Add Zod and React Hook Form support
 'use client';
 
-import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 import { getTranslations } from '@/lib/i18n';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -17,27 +20,44 @@ import { motion } from 'framer-motion';
 interface ContactSectionProps {
   locale: string;
 }
+const saudiPhoneRegex = /^(05\d{8}|\+9665\d{8})$/;
 
 export default function ContactSection({ locale }: ContactSectionProps) {
   const t = getTranslations(locale as 'en' | 'ar');
   const isRTL = locale === 'ar';
 
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    phone: '',
-    email: '',
-    subject: '',
-    message: '',
+const schema = z.object({
+  firstName: z.string().min(1, { message: t.validation.firstNameRequired }),
+  lastName: z.string().min(1, { message: t.validation.lastNameRequired }),
+  phone: z.string()
+    .min(1, { message: t.validation.phoneRequired })
+    .refine((val) => saudiPhoneRegex.test(val), {
+      message: t.validation.phoneInvalid,
+    }),
+  email: z.string().email({ message: t.validation.emailInvalid }),
+  subject: z.string().min(1, { message: t.validation.subjectRequired }),
+  message: z.string().min(1, { message: t.validation.messageRequired }),
+});
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+      phone: '',
+      email: '',
+      subject: '',
+      message: '',
+    },
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+  const onSubmit = (data: any) => {
+    console.log('Form data:', data);
   };
 
   return (
@@ -47,7 +67,6 @@ export default function ContactSection({ locale }: ContactSectionProps) {
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 40 }}
@@ -62,7 +81,6 @@ export default function ContactSection({ locale }: ContactSectionProps) {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Contact Image */}
           <motion.div
             className="flex items-center justify-center lg:order-2"
             initial={{ opacity: 0, x: isRTL ? -100 : 100 }}
@@ -77,7 +95,6 @@ export default function ContactSection({ locale }: ContactSectionProps) {
             />
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div
             className="space-y-8"
             initial={{ opacity: 0, x: isRTL ? 100 : -100 }}
@@ -94,39 +111,43 @@ export default function ContactSection({ locale }: ContactSectionProps) {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name Fields */}
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className='space-y-6'>
                 <Input
                   placeholder={t.firstName}
-                  value={formData.firstName}
-                  onChange={(e) => handleChange('firstName', e.target.value)}
-                  className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 py-[12px] px-[16px] h-[56px]"
-                />
+                  {...register('firstName')}
+                  className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 h-[56px]"
+                  />
+                  {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName.message}</p>}
+
+                </div>
+                <div className='space-y-6'>
                 <Input
                   placeholder={t.lastName}
-                  value={formData.lastName}
-                  onChange={(e) => handleChange('lastName', e.target.value)}
-                  className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 py-[12px] px-[16px] h-[56px]"
+                  {...register('lastName')}
+                  className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 h-[56px]"
                 />
+
+              {errors.lastName && <p className="text-red-500 text-sm">{errors.lastName.message}</p>}
+                </div>
               </div>
 
               <Input
                 placeholder={t.phoneNumber}
-                value={formData.phone}
-                onChange={(e) => handleChange('phone', e.target.value)}
-                className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 py-[12px] px-[16px] h-[56px]"
+                {...register('phone')}
+                className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 h-[56px]"
               />
+              {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
 
               <Input
-                type="email"
                 placeholder={t.email}
-                value={formData.email}
-                onChange={(e) => handleChange('email', e.target.value)}
-                className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 py-[12px] px-[16px] h-[56px]"
+                {...register('email')}
+                className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 h-[56px]"
               />
+              {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
 
-              <Select onValueChange={(value) => handleChange('subject', value)}>
+              <Select onValueChange={(value) => setValue('subject', value)}>
                 <SelectTrigger className="bg-[#2a2a2a] border-gray-700 text-white h-[56px]">
                   <SelectValue placeholder="Select a subject" />
                 </SelectTrigger>
@@ -136,19 +157,17 @@ export default function ContactSection({ locale }: ContactSectionProps) {
                   <SelectItem value="general">General Inquiry</SelectItem>
                 </SelectContent>
               </Select>
+              {errors.subject && <p className="text-red-500 text-sm">{errors.subject.message}</p>}
 
               <Textarea
                 placeholder={t.message}
-                value={formData.message}
-                onChange={(e) => handleChange('message', e.target.value)}
+                {...register('message')}
                 rows={6}
-                className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400 py-[12px] px-[16px]"
+                className="bg-[#2a2a2a] border-gray-700 text-white placeholder-gray-400"
               />
+              {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
 
-              <Button
-                type="submit"
-                className="w-full bg-white text-black hover:bg-gray-100"
-              >
+              <Button type="submit" className="w-full bg-white text-black hover:bg-gray-100">
                 {t.send}
               </Button>
             </form>

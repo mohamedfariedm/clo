@@ -24,7 +24,7 @@ export default function Home({ params }: { params: { locale: string } }) {
   return (
     <div className="min-h-screen bg-white">
       <Header locale={params.locale} />
-      <main>
+      <main className='overflow-hidden'>
         <HeroSection locale={params.locale} />
         <HowItWorksSection locale={params.locale} />
         <BrandsSection locale={params.locale} />
