@@ -43,7 +43,7 @@ export default function ContactSection({ locale }: ContactSectionProps) {
   return (
     <section
       id="contact"
-      className="py-20 bg-[#1A1A1A]"
+      className="py-20 bg-[#1A1A1A] scroll-mt-[80px]"
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +71,7 @@ export default function ContactSection({ locale }: ContactSectionProps) {
             viewport={{ once: false, amount: 0.3 }}
           >
             <img
-              src="/assets/about.svg"
+              src="/assets/footerImage.svg"
               alt="Contact Us"
               className="w-full h-full object-cover rounded-2xl shadow-lg"
             />

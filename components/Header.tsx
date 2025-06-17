@@ -75,8 +75,14 @@ export default function Header({ locale }: HeaderProps) {
         <div className="flex justify-between items-center py-3 lg:py-8">
           {/* Logo */}
           <Link href={`/${locale}`}>
-            <span className="text-5xl font-semibold text-white">CLO</span>
-          </Link>
+  <img
+    src="/assets/logo.svg" // replace with your actual logo path
+    alt="CLO Logo"
+    width={73}
+    height={72}
+    className="w-[73px] h-[72px] object-contain"
+  />
+</Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">

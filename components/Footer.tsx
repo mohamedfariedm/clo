@@ -36,8 +36,13 @@ export default function Footer({ locale }: FooterProps) {
           {/* Logo */}
           <div className="flex items-center">
             <Link href={`/${locale}`}>
-              <span className="text-4xl font-semibold text-white">CLO</span>
-            </Link>
+<img
+    src="/assets/logo.svg" // replace with your actual logo path
+    alt="CLO Logo"
+    width={73}
+    height={72}
+    className="w-[73px] h-[72px] object-contain"
+  />            </Link>
           </div>
 
           {/* Social Links */}

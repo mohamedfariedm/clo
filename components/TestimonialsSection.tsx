@@ -36,7 +36,7 @@ export default function TestimonialsSection({ locale }: TestimonialsSectionProps
   testimonials.forEach((t, i) => columns[i % 3].push(t));
 
   return (
-    <section id="testimonials" className="py-20 bg-gray-100" dir={isRTL ? 'rtl' : 'ltr'}>
+    <section id="testimonials" className="scroll-mt-[80px] py-20 bg-gray-100" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -54,9 +54,9 @@ export default function TestimonialsSection({ locale }: TestimonialsSectionProps
     spaceBetween={20}
     loop={true}
     allowTouchMove={true}
-    speed={1000} // adjust to control smoothness
+    speed={3000} // adjust to control smoothness
     autoplay={{
-      delay:colIndex+2*100,
+      delay:0,
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
       reverseDirection: colIndex === 1, // reverse middle column

@@ -33,7 +33,7 @@ export default function WhyChooseSection({ locale }: WhyChooseSectionProps) {
   return (
     <section
       id="features"
-      className="py-20 bg-[#1A1A1A]"
+      className="scroll-mt-[80px] py-20 bg-[#1A1A1A]"
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,7 +61,7 @@ export default function WhyChooseSection({ locale }: WhyChooseSectionProps) {
                   ease: 'easeOut',
                 }}
                 viewport={{ once: false, amount: 0.4 }}
-                className="bg-[url('/assets/featureCard.svg')] rounded-3xl p-8 hover:bg-[url('/assets/featureCardHover.svg')] bg-cover bg-center bg-no-repeat transition-all duration-300 ease-in-out"
+                className="bg-[url('/assets/featureCard.svg')] rounded-3xl p-8 hover:bg-[url('/assets/featureCardHover.svg')] bg-cover bg-center bg-no-repeat transition-all duration-700 ease-in-out"
               >
                 <div className="bg-[#434343] rounded-full p-4 w-fit mb-8">
                   <IconComponent className="w-12 h-12 text-white" />

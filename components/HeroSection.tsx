@@ -82,8 +82,8 @@ export default function HeroSection({ locale }: HeroSectionProps) {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-[56px]"
             variants={buttonsVariant}
           >
-            <span className="bg-[url(/assets/appStoreBlackBorder.svg)] hover:bg-[url(/assets/appStoreBlackBorderHover.svg)] transition-all duration-500 w-[129.31px] h-[47.059px] bg-contain bg-no-repeat" />
-            <span className="bg-[url(/assets/googlePlayBlackBorder.svg)] hover:bg-[url(/assets/googlePlayBlackBorderHover.svg)] transition-all duration-500 w-[126.26px] h-[47.059px] bg-contain bg-no-repeat" />
+            <span className="bg-[url(/assets/appStoreBlackBorder.svg)] hover:bg-[url(/assets/appStoreBlackBorderHover.svg)] transition-all duration-500 w-[129.31px] h-[47.059px] bg-contain bg-no-repeat cursor-pointer" />
+            <span className="bg-[url(/assets/googlePlayBlackBorder.svg)] hover:bg-[url(/assets/googlePlayBlackBorderHover.svg)] transition-all duration-500 w-[126.26px] h-[47.059px] bg-contain bg-no-repeat cursor-pointer" />
           </motion.div>
         </motion.div>
       </div>
