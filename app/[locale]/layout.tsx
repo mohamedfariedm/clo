@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   title: 'CLO - Shop Top Brands Anytime, Anywhere',
   description: 'Discover fashion, beauty, and lifestyle products from top brands all in one place. Fast delivery, secure payments, and seamless shopping experience.',
   keywords: 'shopping, fashion, beauty, lifestyle, brands, mobile app, CLO',
+   icons: {
+    icon: '/favicon.ico', // ✅ Add this line
+  },
   authors: [{ name: 'CLO Team' }],
   openGraph: {
     title: 'CLO - Shop Top Brands Anytime, Anywhere',
